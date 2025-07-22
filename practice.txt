@@ -1,0 +1,183 @@
+Milestone 2: Course Management & Role-Based Access
+
+Goal: Build the core course structure and ensure that user actions are governed by their assigned roles.
+
+2.1 Course Content Hierarchy
+
+Business Goal: To allow for the creation of well-structured educational content. A course should be a container for multiple modules, and cach module can contain several sub-modules. This creates a clear, hierarchical leaming path. If a course is removed, all its associated content must be automatically removed as well to maintain data integrity
+
+2.2 Course Management with Access Control
+
+Task: Implement full CRUD (Create, Rend, Update. Delete) functionality for courses, secured by a robust access control system based on user roles and content ownership
+
+Business Goal: The platform will implement a role-hased access control system for course management to ensure content integrity and appropriate user permissions. This system will govern the lifecycle of a course, definung privileges for its creation, comprehensive viewing of its structure including all learning materials, and its subsequent modification or deletion Access rights for these actions will be distinctly assigned to different user roles, such as administrators, instructors, and students, ensuring that only authorized individuals can manage or internet with course content.
+
+
+
+Milestone 3: Secure Document Management & Versioning
+
+Goal: Implement a secure system for managing and storing course-related files with version control
+
+Task: Build a complete document management feature covering the entire lifecycle of a document, from upload and download to updates and version history management
+
+3.1 Secure Document Storage
+
+Business Goal: To provide a system for securely managing file attachments (hke PDFs of lecture notes) for course content. The system mat track different versions of cach file and ensure that all stored files are protected through encryption.
+
+3.2 Document Lifecycle Management
+
+Business Use Case (Upload): An INSTRUCTOR must be able to upload a file toa specific part of their course. The system wait automatically encrypt and save the file securely
+
+Business Use Case (Dowuland): A STUDENT enrolled in a course, the cour INSTRUCTOR, or an ADMIN must be able to view and download course documents. The system will provide the decrypted file securely to the authorized user Business Use Case (Update & Versioning): When an INSTRUCTOR uploads a new version of an existing file, the system must not overwnie the old one. Instead, it will save the new file as the current version and keep a history of previous versions. The system will retain a maximum of 10 historical versions, automatically removing the oldest one as new ones are added.
+
+Business Use Case (History & Revert); An INSTRUCTOR must be able to view the versson history for a document and have the ability to revert to an older version, making it the current one.
+
+Milestone 4: User Engagement, Auditing, and System Ops
+
+Goal: Introduce features for tracking student progress, auditing system activity, and performing automated maintenance
+
+Task: Develop a system that allows students to enroll in courses and track their learning progress
+
+4.1 Enrollment & Progress Tracking
+
+Business Use Case: A STUDENT must be able to enroll in courses. As they complete parts of the course, they can mark them as "complete." The system will then calculate and display a course completion percentage, allowing the student to track their progress.
+
+4.2 Enhanced List Browsing
+
+T
+
+Business Use Case: When a ser shows a long list of items, like courses or users, the platform must present the data in managrable pages. The user should also be able to sort these lists (eg, alphabetically by title) to more easily find what they are looking for
+
+4.3 System Audit Trail
+
+Business Use Case: For security and accountability, the system must automatically record all major events, such as a new user signing up, a course being deleted, or document being updated. This audit log will capture who performed the action, what the action was, and when it occurred. Any sensitive data within the log must itself be protected
+
+Automated Data Security Maintenance
+
+Business Use Case: Case: To To ensure enure ongoing data security, the platform must have an mutomated hackground process that periodically re-secures older document files with the latest security standards. Tus process runs automatically without user intervention.
+[22-07-2025 21:05] malapati venkata narendra: Milestone 5: Reporting. Robustness & Advanced Features
+
+Goal: Add production-ready features for monitoring, privacy, and system stability
+
+5.1 Logging & Reporting
+
+Business Use Case: An ADMIN must have access to a summary report displaying key platform metrics, such as the total number of users, courses, and documents. The system's operational logs must be structured for cry analysis and must never contain sensitive user data
+
+5.2 Response Data Masking
+
+Business Use Case: To protect user privacy and prevent accidental exposure of personal information, the platform must automatically hide parts of senutive data (like a user's email address) when it is displayed in the application
+
+5.3 API Rate Limiting
+
+Business Use Case: To protect the platform from abuse and ensure stability for all users, the system will limit the number of requests a single user can make in a short period. If a user exceeds this limit, they will be temporarily blocked and asked to slow down
+
+I
+[22-07-2025 21:05] malapati venkata narendra: Milestone 6: Junit Testing
+
+Guak: Ensure the application is reliable, correct, and maintainable by implementing comprehensive suite of automated tests covenng all entical application layers
+
+Business Use Case: The development team must have a high degree of confidence that new features or bug fixes do not berak existing fanctionality. To achieve this, automated testa mat be writien in valsdate the application's logic. These Insts serve as a safety net, catching regressions with real world scenarios
+[22-07-2025 21:08] malapati venkata narendra: Annexure: Role-Based Access Control (RBAC) Requirements
+
+This table defines the permissions for the primary user roles on the LeamSphere platform Student, Instructor, and Admin. The goal is to ensure users can only perform actions appropriate to their function, safeguarding platform integrity and data security
+
+Feature / Business Action
+
+Student
+
+Instructor
+
+Admin
+
+Business Justification
+
+User Management
+
+Register for a new account
+
+Yes
+
+Yes
+
+All user types must be able to create an account to access the platform.
+
+Log in Log out
+
+Yes
+
+Yes
+
+Yes
+
+All authenticated users need to manage their sessions securely
+
+View own profile
+
+Yes
+
+Yes
+
+Yes
+
+All users should be able to see their owg account information
+
+View a list of all users
+
+No
+
+No
+
+Yes
+
+Only administrators require a system-wide view of all users for management
+[22-07-2025 21:09] malapati venkata narendra: Course Management
+
+View list of all available courses
+
+Yes
+
+Yes
+
+Yes
+
+All users should be able to browse the course catalog to find content.
+
+View full details of any course
+
+Yo
+
+Yes
+
+Yes
+
+Similar to browsing, all users need to see course details (modules, sub-modules) to evaluate them.
+
+Create a new course
+
+No
+
+Yes
+
+Yes
+
+Course creation is restricted to content authors (Instructors) and system administrators.
+
+Update a course
+
+No
+
+Own
+
+Yes
+
+An instructor can only modify their own courses. Admins can modify any course for oversight
+
+Delete a course
+
+No
+
+Own
+
+Yes
+
+An instructor can only delete their own courses. Admins can delete any course
