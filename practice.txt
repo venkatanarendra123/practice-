@@ -181,3 +181,53 @@ Own
 Yes
 
 An instructor can only delete their own courses. Admins can delete any course
+
+
+
+
+
+
+
+
+Document Management
+Upload a document to a course
+No
+Own
+Yes
+Only the instructor who owns the course (or an Admin) can add materials to it
+Download a document
+Enrolled
+Own
+Yes
+Access to materials is limited to enrolled students, the course creator, or an Admin.
+Update a document (create new version)
+No
+Own
+Yes
+Only the content owner or an Admin should be able to manage document Versions.
+View document version history
+No
+Own
+Yes
+Reviewing past versions is an authoring/administrative task.
+Revert a document to a prior version
+No
+Own
+Yes
+Reverting versions is a critical content management function reserved for authors and Admins.
+Platform Administration
+Access the administrative report
+No
+No
+Yes
+High-level platform metrics are for administrative oversight only.
+Access the system audit trail
+No
+No
+Yes
+The audit trail is a sensitive security and accountability log accessible only by Admins
+Permission Legend:
+Yes: The role has permission to perform the action.
+No: The role does not have permission.
+Own: The role can only perform this action on content they have created/own.
+If Enrolled: The student can only perform this action for courses they are actively enrolled in
